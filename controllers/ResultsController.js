@@ -1,4 +1,4 @@
 survey.controller('ResultsCtrl', function FavoriteFoodCtrl($scope, SurveyFactory) {
-  $scope.favoriteFoods = SurveyFactory.favoriteFoods;
+  $scope.answers = SurveyFactory.answers;
   $scope.SurveyFactory = SurveyFactory;
 });

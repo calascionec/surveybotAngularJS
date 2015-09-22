@@ -14,19 +14,16 @@
       <div class="row" ng-controller="QuestionsCtrl">
         <div class="col-md-12">
 
-          <form ng-submit='SurveyFactory.addFavoriteColor()' class='form-inline' role='form'>
+          <form ng-submit='SurveyFactory.addAnswer()' class='form-inline' role='form'>
             <div class='form-group'>
               <label for="favorite-color">What is your favorite color?</label>
               <input type="text" ng-model="SurveyFactory.favoriteColor" class='form-control' id='favorite-color'>
-              <button class="btn btn-default btn-sm" type='submit'>Answer</button>
-            </div>
-          </form>
 
+              <div class='form-group'>
+                <label for="favorite-food">What is your favorite food?</label>
+                <input type="text" ng-model="SurveyFactory.favoriteFood" class='form-control' id='favorite-food'>
 
-          <form ng-submit='SurveyFactory.addFavoriteFood()' class='form-inline' role='form'>
-            <div class='form-group'>
-              <label for="favorite-food">What is your favorite food?</label>
-              <input type="text" ng-model="SurveyFactory.favoriteFood" class='form-control' id='favorite-food'>
+              </div>
               <button class="btn btn-default btn-sm" type='submit'>Answer</button>
             </div>
           </form>
@@ -34,7 +31,9 @@
       </div>
       <div class='row' ng-controller='ResultsCtrl'>
         <div class='col-md-6'>
-
+          <ul>
+            <li ng-repeat='item in answers'>Favorite Color: {{item.favoriteColor}}, Favorite Food: {{item.favoriteFood}}</li>
+          </ul>
         </div>
       </div>
     </div>
